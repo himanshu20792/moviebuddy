@@ -1,17 +1,26 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[126]:
+
+
 import pandas as pd
 import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+from wordcloud import WordCloud, STOPWORDS
 import pathlib
 import requests
 import re
 import openpyxl
-import xlsxwriter 
 
-MOVIE_DATASET_FILE = 'movie_dataset.csv'
-POST_PROCESSED_FILE = 'post_prcssd_datafile.csv'
-movie_list = ''
 vectorizer = CountVectorizer()
+
+
+# # Function definitions
+
+# In[123]:
+
 
 def prep_db(file,file_type):
     '''
@@ -33,7 +42,7 @@ def prep_db(file,file_type):
 
 def combine_row_text(features,df):
     '''
-    This module combines and sets the case to lower
+    This module combines text columns and sets the case of the combined text to lower
     args :
     input : 
     features # list of database columns to search in the movies database
@@ -49,11 +58,11 @@ def combine_row_text(features,df):
 def highest_count_words(df):
     '''
     This module takes as input the imported movie dataset 
-    Also this function counts the words and
+    and counts the occurance of the words and
     sets the columns in decreasing order
     args :
-    input : df # pandas dataframe of the pandas dataframe
-    output : counts # dataframe of the counted objects
+    input : df # pandas dataframe of the imported movie dataset
+    output : counts # dataframe of the counted words
     '''
     
     count_matrix = vectorizer.fit_transform(df.comb)
@@ -77,10 +86,10 @@ def find_delete_columns(counts,character,char):
     t = 0 # column counter
     n = 1
     orig = len(counts.columns)
-    print(' ')
-    print(' ')
-    print(f'Original column count is {len(counts.columns)}')
-    print(f'removing {char} columns .... ')
+    #print(' ')
+    #print(' ')
+    #print(f'Original column count is {len(counts.columns)}')
+    print(f'removing {char} .... ')
     for i in counts.columns:
         if t == (n * 1000):
             # print(str(round(t/len(counts.columns)*100,0))+'%')
@@ -88,8 +97,8 @@ def find_delete_columns(counts,character,char):
         t+=1
         if re.findall(character, i):
             del counts[i]
-    print(f'after deleting the unwanted word -{char}-, the list is {len(counts.columns)} long')
-    print(f'Reduction effectiveness : {str(round((1-(len(counts.columns)/orig))*100,0))} %')
+    #print(f'after deleting the unwanted word -{char}-, the list is {len(counts.columns)} long')
+    #print(f'Reduction effectiveness : {str(round((1-(len(counts.columns)/orig))*100,0))} %')
     return(counts)
 
 def delete_columns_mega(counts):                   
@@ -148,7 +157,7 @@ def delete_columns_mega(counts):
     counts = find_delete_columns(counts, '(^what$)',' what')
     return (counts)
 
-def most_frequent_words(counts,POST_PROCESSED_FILE):
+def most_frequent_words(counts):
     '''
     This function prepares the most frequent words of the 
     specific movie's selection types and ouputs to a csv
@@ -164,25 +173,98 @@ def most_frequent_words(counts,POST_PROCESSED_FILE):
     cols = cols[-1:] + cols[:-1]
     counts_transposed = counts_transposed[cols]
     counts_transposed = counts_transposed.sort_values(by=['sum'], axis=0, ascending=False)
-    counts_transposed.to_csv(POST_PROCESSED_FILE, sep=',', encoding='utf-8')
-    return(counts_transposed)
+    # counts_transposed.to_csv(POST_PROCESSED_FILE, sep=',', encoding='utf-8')
+    movie_counts = counts_transposed
+    most_frequent_words = counts_transposed[['sum']]
+    most_frequent_words = most_frequent_words.reset_index()
+    most_frequent_words = most_frequent_words.rename(columns={'index': 'word', 'sum':'frequency'}, index={'title': 'index'})
+    # most_frequent_words[['word','frequency']].head(40) # 40 most frequent words in the database
+    #return(most_frequent_words[['word','frequency']].head(nr_of_words))
+    return(most_frequent_words,counts_transposed)
+
+def cloud_word(word,nr_of_movies,movie_counts):
+    var = word
+    df = movie_counts.T[[var]]
+    return(df.sort_values(var, ascending=False).head(nr_of_movies))
+
+def word_cloud(wrds):
+    comment_words = '' 
+    stopwords = set(STOPWORDS)
+
+    for val in wrds.comb: 
+
+        # typecaste each val to string 
+        val = str(val) 
+
+        # split the value 
+        tokens = val.split() 
+
+        # Converts each token into lowercase 
+        for i in range(len(tokens)): 
+            tokens[i] = tokens[i].lower() 
+
+        comment_words += " ".join(tokens)+" "
+        
+    wordcloud = WordCloud(width = 800, height = 800, 
+                    background_color ='white', 
+                    stopwords = stopwords, 
+                    min_font_size = 10).generate(comment_words) 
+
+    # plot the WordCloud image                        
+    plt.figure(figsize = (8, 8), facecolor = None) 
+    plt.imshow(wordcloud) 
+    plt.axis("off") 
+    plt.tight_layout(pad = 0) 
+
+    plt.show()
 
 
-# Imports the csv database
+# # Import and format the dB 
+
+# In[116]:
+
+
+'''
+Imports the 4089 movie database into pandas so you can retrieve the columns
+There are 24 columns in the database ranging from keywords to director.
+'''
 df = prep_db(MOVIE_DATASET_FILE,'csv')
-
 print('The selection types are : ')
-print(df.columns)
+print(df.info())
 
-# combine the needed colums data into one string
+
+# This function combines the selected df columns as below into one searchable string
 df = combine_row_text(['title', 'director', 'tagline', 'genres', 'keywords'], df)
 
-# calculates the frequency of words
+# calculates the frequency of words in the selected columns 
 counts = highest_count_words(df)
 
-# This function cleans the database of unwanted words like "the , an , other lanaguage characters, etc)  
+# This function cleans the database of unwanted words like "the" , "an" , other misc lanaguage characters, etc)  
 counts = delete_columns_mega(counts)
 
 
-# This function prepares the most frequent words of the specific movie's selection types and ouputs a csv 
-counts_T = most_frequent_words(counts,POST_PROCESSED_FILE)
+# # Word cloud
+
+# In[117]:
+
+
+word_cloud(df)
+
+
+# # Most frequent words
+
+# In[118]:
+
+
+freq_words,movie_counts = most_frequent_words(counts)
+freq_words.head(40)
+
+
+# # The frequency of movies that contain a certain word
+
+# In[125]:
+
+
+cl_word = cloud_word('adventure',40,movie_counts)
+cl_word
+
