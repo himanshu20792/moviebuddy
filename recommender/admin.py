@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import MovieDataBase
 
-# Register your models here.
+admin.site.register(MovieDataBase)
+

@@ -1,9 +1,9 @@
 {% extends "recommender/base.html"%}
 {% block content %} 
-    <h1>HomePAGE</h1>
-    <div>
-        <a href="{% url 'recommender-home' %}">HomePage</a> 
-        <a href="{% url 'recommender-wordcloud' %}">WordCloud</a> 
-        <a href="{% url 'recommender-movieselection' %}">MovieSelection</a> 
-    </div>
+    <h1>MovieBuddy</h1>
+
+    <a class="button" href="{% url 'recommender-home' %}" >Login</a>
+    <a class="button" href="{% url 'recommender-wordcloud' %}" >WordCloud</a>
+    <a class="button" href="{% url 'recommender-movieselection' %}" >MovieSelection</a>
+
 {% endblock content%}
