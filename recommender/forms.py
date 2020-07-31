@@ -1,4 +1,5 @@
 from django import forms
+from django.core.exceptions import ValidationError
     
 movies_choice =( 
     ("The Terminator", "The Terminator"), 
@@ -9,4 +10,6 @@ movies_choice =(
 ) 
 
 class MovieRecsInputData(forms.Form):
-    Choose_Movie = forms.ChoiceField(choices = movies_choice)
+    choose_movie = forms.ChoiceField(label='Choose Movie', choices = movies_choice)
+
+    
