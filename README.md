@@ -14,7 +14,7 @@
 - Three different options of recommendations
 - Minimizes the cold start problem
 
-<p align="center"><img width=100% src="https://github.com/hilsdsg3/movie-recommender/blob/master/meta_data/Homepage_picture.bmp"></p>
+<p align="center"><img width=100% src="https://github.com/himanshu20792/moviebuddy/blob/master/meta_data/Homepage_picture.bmp"></p>
 
 <br>
 
