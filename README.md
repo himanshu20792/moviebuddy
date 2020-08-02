@@ -1,4 +1,4 @@
-<p align="center"><img width=80% src="https://github.com/hilsdsg3/movie-recommender/blob/master/meta_data/logo.bmp"></p>
+<p align="center"><img width=80% src="https://github.com/himanshu20792/moviebuddy/blob/master/meta_data/logo.bmp"></p>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![Python](https://img.shields.io/badge/python-v3.7+-blue.svg)
