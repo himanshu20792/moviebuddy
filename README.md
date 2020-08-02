@@ -26,7 +26,7 @@ The Word Cloud button leads to a word cloud that uses keyword search. On the Wor
 
 The Movie Preferences button leads to a page where selections of three genres with the ability to select like movies in each genre. This portion of the website would recommend after only three clicks. This page is currently under construction.
 
-<p align="center"><img width=100% src="https://github.com/hilsdsg3/movie-recommender/blob/master/meta_data/Organization_website.bmp"></p>
+<p align="center"><img width=100% src="https://github.com/himanshu20792/moviebuddy/blob/master/meta_data/Organization_website.bmp"></p>
 <br>
 
 ## Development
@@ -37,7 +37,7 @@ The word cloud generates by frequencies or occurrences of words, then normalizes
 
 The word cloud is generated with python and displayed with Django framework. We are currently investigating alternate methods to display.
 
-<p align="center"><img width=80% src="https://github.com/hilsdsg3/movie-recommender/blob/master/meta_data/Word_cloud_process_flow.bmp"></p>
+<p align="center"><img width=80% src="https://github.com/himanshu20792/moviebuddy/blob/master/meta_data/Word_cloud_process_flow.bmp"></p>
 ## Live Demo
 
 ## Disclaimer
@@ -47,7 +47,7 @@ The word cloud is generated with python and displayed with Django framework. We 
 - Cold start problem article
 
 ## Contributing
-Please take a look at the [contributing](https://github.com/hilsdsg3/movie-recommender/blob/master/CONTRIBUTING.md) guidelines if you're interested in helping!
+Please take a look at the [contributing](https://github.com/himanshu20792/moviebuddy/blob/master/CONTRIBUTING.md) guidelines if you're interested in helping!
 - Alan Wang
 - Himanshu Agarwal
 - Ty Schnettler
