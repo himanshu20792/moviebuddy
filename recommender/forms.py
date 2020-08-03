@@ -9,7 +9,7 @@ movies_choice =(
     ("5", "Five"), 
 ) 
 
-class MovieRecsInputData(forms.Form):
+class MovieInputForm(forms.Form):
     choose_movie = forms.ChoiceField(label='Choose Movie', choices = movies_choice)
 
     

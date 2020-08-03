@@ -1,8 +1,10 @@
 {% extends "recommender/base.html" %}
 {% block content%} 
+    <img src="../../static/recommender/images/wordcloud.png" alt="WordCloud">
     <div class="tag-cloud"></div>
         {% for t in data %}
-            <a href="/wordcloud/{{ t.word }}/" class="size-{{ t.frequency }}">{{ t.word }}</a> 
+            <a href="/wordcloud/{{ t.id }}/" class="size-{{ t.frequency }}">{{ t.word }}</a> 
         {% endfor %}
     </div>
+
 {% endblock content%}

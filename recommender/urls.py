@@ -20,5 +20,6 @@ from . import views
 urlpatterns = [
     path('', views.home, name = 'recommender-home'),
     path('wordcloud/', views.wordcloud, name = 'recommender-wordcloud'),
+    path('wordcloud/<int:my_id>/', views.wordcloud_detail, name = 'recommender-wordcloud'),
     path('movieselection/', views.movieselection, name = 'recommender-movieselection'),
 ]

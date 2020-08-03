@@ -1,9 +1,21 @@
+/*
 body {
     background: white url("images/popcorn.jpeg") no-repeat;
 }
+*/
 
+/*
+body { 
+    background-image: url('images/cinema.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+  }
+*/
+  
 h1 {
     font-size: 800%;
+    text-align: center;
 }
 
 a {
