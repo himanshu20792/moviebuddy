@@ -38,8 +38,11 @@ The word cloud generates by frequencies or occurrences of words, then normalizes
 The word cloud is generated with python and displayed with Django framework. We are currently investigating alternate methods to display.
 
 <p align="center"><img width=80% src="https://github.com/himanshu20792/moviebuddy/blob/master/meta_data/Word_cloud_process_flow.bmp"></p>
+
+
 The word cloud graphic is the following :  
 <p align="center"><img width=80% src="https://github.com/himanshu20792/moviebuddy/blob/master/meta_data/word_cloud_graphic.png"></p>
+
 <p align="center"><img width=80% src="https://github.com/himanshu20792/moviebuddy/blob/master/meta_data/findsimilar_process_flow.png"></p>
 
 ## Live Demo
