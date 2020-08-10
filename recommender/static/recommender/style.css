@@ -1,8 +1,14 @@
-/*
-body {
+.home {
+    background: white url("images/Homepage_background.bmp") no-repeat;
+}
+
+.wordcloud {
     background: white url("images/popcorn.jpeg") no-repeat;
 }
-*/
+
+.movieselection {
+    background: white url("images/movieselection.jpg") no-repeat;
+}
 
 /*
 body { 
@@ -12,10 +18,14 @@ body {
     background-position: center; 
   }
 */
-  
+
 h1 {
     font-size: 800%;
     text-align: center;
+}
+
+.hometitle {
+    color: white
 }
 
 a {
@@ -24,24 +34,29 @@ a {
     color: #BFC0C0;
     text-decoration: none;
     letter-spacing: 1px;
+    text-align: center !important;
 }
 
-.button {
+.tags {
+    font-size: 200% !important;
     color: #494949 !important;
-    text-transform: uppercase;
-    text-decoration: none;
-    background: #ffffff;
-    padding: 20px;
-    border: 4px solid #494949 !important;
-    display: inline-block;
-    transition: all 0.4s ease 0s;
 }
 
-.button:hover {
-    color: #ffffff !important;
-    background: #303030;
-    border-color: #303030 !important;
-    transition: all 0.4s ease 0s;
+img {
+    float:right;
+}
+
+.information {
+    color: white;
+}
+
+h2 {
+    font-size: 200% !important;
+}
+
+div {
+    text-align: center !important;
+    font-size: 200% !important;
 }
 
 

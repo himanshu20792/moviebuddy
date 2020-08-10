@@ -1,9 +1,14 @@
 {% extends "recommender/base.html"%}
 {% block content %} 
-    <h1>MovieBuddy</h1>
-
-    <a class="button" href="{% url 'recommender-home' %}" >Login</a>
-    <a class="button" href="{% url 'recommender-wordcloud' %}" >WordCloud</a>
-    <a class="button" href="{% url 'recommender-movieselection' %}" >MovieSelection</a>
-
+    <h1 class="hometitle">MovieBuddy</h1>
+    <body class="home"></body>
+    <div class= "information">
+        <h2>Finding Movies you like. Simple</h2>
+        <p>Scrolling through zillions of movies titles to find the <br> one movie you want to watch must be tiring <br> We know <br> Here are some ways requiring must less time and effort<br> _______________________________________________________</p>
+    </div>
+    <div>
+        <a class="btn btn-primary btn-lg"  href="{% url 'recommender-wordcloud' %}" role="button">WordCloud</a>
+        <a class="btn btn-primary btn-lg" href="{% url 'recommender-movieselection' %}" role="button">Movie Selection</a>
+        <a class="btn btn-primary btn-lg" href="{% url 'recommender-home' %}" role="button">Login</a>
+    </div>
 {% endblock content%}
