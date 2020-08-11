@@ -2,7 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect
 from .models import MovieDataBase, ContentRec
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from .forms import MovieInputForm
+from .forms import MovieInputForm, WordForm
 from django.contrib import messages
 from recommender.utils import rec
 import csv, io 
@@ -16,6 +16,18 @@ def wordcloud(request):
         'data': MovieDataBase.objects.all()
     }
     return render(request, 'recommender/wordcloud.html', context)
+
+def wordselection(request):
+    if request.method == 'POST':
+        form = WordForm(request.POST)
+        if form.is_valid():
+            data = form.cleaned_data
+            field = data['choose_word']
+            print(MovieDataBase.objects.get(word = field).id)
+            return HttpResponseRedirect('/wordcloud/'+str(MovieDataBase.objects.get(word = field).id))
+    else: 
+        form = WordForm() 
+    return render(request, 'recommender/wordcloud.html', {'form': form})
 
 def wordcloud_detail(request, my_id):
     obj = MovieDataBase.objects.get(id=my_id)
@@ -49,7 +61,7 @@ def output(request):
 def contact_upload(request):
     template = "recommender/contact_upload.html"
     prompt = {
-        'order': 'Order of the CSV should be id, title, tagline, description, genres, keywords, date, collection, runtime, revenue_budget, director, cast, production_companies, production_countries, popularity, average_vote, num_votes, language, imdb_id, poster_url'
+        'order': 'Order of the CSV should be'
     }
 
     if request.method == 'GET':
@@ -64,21 +76,10 @@ def contact_upload(request):
     io_string = io.StringIO(data_set)
     next(io_string)
     for column in csv.reader(io_string, delimiter = ',', quotechar = "|"):
-        print(column[0])
-        print(column[1])
-        print(column[2])
-        print(column[3])
-        print(column[4])
-        print(column[5])
-        print(column[6:])
-        print('_____________________')
-        _, created = ContentRec.objects.update_or_create(
-            id1 = column[0], 
-            title = column[1], 
-            popularity = column[2],
-            average_vote = column[3], 
-            num_votes = column[4], 	
-            keywords = column[5:],
+        print(" ".join(column[1:]))
+        _, created = MovieDataBase.objects.update_or_create(
+            word = column[0], 
+            recommendation = ", ".join(column[1:]), 
         )
     context = {} 
     return render(request, template, context)
