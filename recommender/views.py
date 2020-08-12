@@ -76,10 +76,10 @@ def contact_upload(request):
     io_string = io.StringIO(data_set)
     next(io_string)
     for column in csv.reader(io_string, delimiter = ',', quotechar = "|"):
-        print(" ".join(column[1:]))
-        _, created = MovieDataBase.objects.update_or_create(
-            word = column[0], 
-            recommendation = ", ".join(column[1:]), 
+        _, created = ContentRec.objects.update_or_create(
+            id1 = column[0],
+            title = column[1],
+            genres = ', '.join(column[2:]).replace('"', ''),
         )
     context = {} 
     return render(request, template, context)

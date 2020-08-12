@@ -19,6 +19,13 @@ body {
   }
 */
 
+.form {
+    margin: 0 auto; 
+    position:absolute; 
+    left:158px;
+    top:258px;
+}
+
 h1 {
     font-size: 800%;
     text-align: center;
