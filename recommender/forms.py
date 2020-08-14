@@ -64,4 +64,4 @@ class MovieInputForm(forms.Form):
     choose_movie = forms.CharField()
 
 class WordForm(forms.Form):
-    choose_word = forms.ChoiceField(choices=subtype)
+    choose_word = forms.ChoiceField(choices=subtype, label = "Choose Word")
