@@ -8,7 +8,6 @@ class MovieDataBase(models.Model):
         return self.word
 
 class ContentRec(models.Model):
-    id1 = models.IntegerField()
     title = models.TextField()
     genres = models.TextField()
     keywords = models.TextField()

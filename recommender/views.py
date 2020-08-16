@@ -75,12 +75,19 @@ def contact_upload(request):
     data_set = csv_file.read().decode('UTF-8')
     io_string = io.StringIO(data_set)
     next(io_string)
-    for column in csv.reader(io_string, delimiter = ',', quotechar = "|"):
+    for column in csv.reader(io_string, delimiter = ';', quotechar = "|"):
+        print(column)
         _, created = ContentRec.objects.update_or_create(
-            id1 = column[0],
-            title = column[1],
-            genres = ', '.join(column[2:]).replace('"', ''),
-        )
+            title = column[0],
+            genres = column[1], 
+            #keywords = ', '.join(column[1:]).replace('"', ''),
+            keywords = column[2],	
+            popularity = column[3],
+            average_vote = column[4],	
+            num_votes = column[5],
+            )
     context = {} 
     return render(request, template, context)
 
+#filter models to delete anything that has " in title
+#seperator sep = ';'
