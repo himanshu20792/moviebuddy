@@ -42,7 +42,10 @@ def movieselection(request):
         if form.is_valid():
             data = form.cleaned_data
             field = data['choose_movie']
-            fieldout = rec(field)
+            if ContentRec.objects.filter(title = field).exists():
+                fieldout = rec(field)
+            else: 
+                fieldout = "Movie Name Not Found"
             #messages.success(request,f'You choose {field}!')
             request.session['field'] = field
             request.session['fieldout'] = fieldout

@@ -1,4 +1,5 @@
 from django import forms
+from .models import ContentRec
 from django.core.exceptions import ValidationError
     
 movies_choice =( 
@@ -60,8 +61,39 @@ subtype =(
     ("alien", "alien"),
 )
 
+popular = [] 
+for x in ContentRec.objects.all():
+    if float(x.popularity) > 15:
+        popular.append(x.title)
+
+#comedy = []
+#action = []
+#romance = []
+#horror = []
+#for x in popular:
+#    print(ContentRec.objects.filter(title = x).values('genres'))
+#    if 'comedy' in ContentRec.objects.filter(title = x).values('genres'):
+#        comedy.append(x)
+            #if 'action' in y.genres:
+            #    action.append(y.title)
+            #if 'romance' in y.genres:
+            #    romance.append(y.title)
+            #if 'horror' in y.genres:
+            #    horror.append(y.title)
+
+#print(comedy)
+
+choices = {
+    (o.title, str(o)) for o in ContentRec.objects.all()
+}
+
+popular = {
+    (o, o) for o in popular
+}
+
 class MovieInputForm(forms.Form):
-    choose_movie = forms.CharField()
+    choose_movie = forms.ChoiceField(choices=popular, label = "Choose Movie")
+    #choose_movie = forms.CharField()
 
 class WordForm(forms.Form):
     choose_word = forms.ChoiceField(choices=subtype, label = "Choose Word")
