@@ -50,6 +50,11 @@ body {
   max-width: 42em;
 }
 
+.cover-heading h1{
+  font-family: 'verdana', sans-serif;
+  font-style: all;
+  font-size: 16px;
+}
 
 /*
  * Header
