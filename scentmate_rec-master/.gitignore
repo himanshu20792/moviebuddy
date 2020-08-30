@@ -1,0 +1,16 @@
+*.pyc
+.ipynb_checkpoints
+*.bak
+*.swp
+.DS_Store
+*.dat
+*.pkl
+data/
+dump/
+pickled_models/
+webapp_test/
+cn_en/
+__pycache__/
+mongo_backup.py
+mongo_update_user.py
+graphlab_item_item_rec.ipynb
