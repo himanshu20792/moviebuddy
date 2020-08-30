@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>ScentMate Perfume Recommender</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="static/css/style.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">ScentMate</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/signin">Sign In</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About ScentMate</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="intro-header">
+      <div class="container">
+        <div class="col-lg-5 mr-auto order-lg-2">
+        <h3><br>Tell me what you liked before... </h3>
+        </div>
+      </div>
+    </header>
+
+
+  <!-- Result -->
+    {% if perfume_id %}
+    {% for element in entered%}
+    <p>I see, you like {{ element['item_name'] }}. </p>
+    <p> This is a {{ element['theme_en'] }} {{ element['gender_en'] }} fragrance of {{ element['brand_en'] }}. </p>
+    <p> The key features of this fragrance are: {{ element['note_en']|join(',') }} </p>
+    <p> And because you like {{ element['item_name'] }}, we found some perfumes you will also like:</p>
+    {% endfor %}
+    {% else %}
+  </div>
+
+  <div class="recommendations">
+    <form class="form">
+      <p>
+        <label>Select the perfume you liked before (We are giving you some examples)</label>
+        <select name="perfume_id">
+          <option value="249612">Dior J`adore, 1999</option>
+          <option value="246211">Dior Pure Poison, 2004</option>
+          <option value="855874">Dior Sauvage, 2015</option>
+          <option value="834568">Dior Homme, 2005</option>
+          <option value="306023">Dior Miss Dior 2012</option>
+          <option value="997029">Chanel N°5, 1921</option>
+          <option value="328164">Chanel Chance Eau Tendre, 2010</option>
+          <option value="440460">Chanel Chance Eau de Toilette, 2003</option>
+          <option value="331972">Chanel No 5 Eau de Toilette, 1921</option>
+          <option value="449262">Hermes Terre d'Hermes, 2006</option>
+          <option value="251428">Hermes Un Jardin Sur Le Nil, 2005</option>
+          <option value="476435">Hermes Eau des Merveilles, 2004</option>
+          <option value="315972">Hermes Un Jardin Sur Le Toit, 2011</option>
+          <option value="118712">Guerlain Shalimar, 1925</option>
+          <option value="263287">Guerlain Mitsouko Eau de Toilette, 1919</option>
+          <option value="175472">Guerlain Vol de Nuit, 1933</option>
+          <option value="884138">Guerlain Samsara Eau de Parfum, 1989</option>
+        </select>
+        <input type='submit' value='Find Similar' />
+      </p>
+    </form>
+  </div>
+
+  <div>
+    <form class="form">
+      <label>OR enter the perfume ID for the perfume you liked before (Need to look up in database)</label>
+      <input type='text' name='perfume_id' placeholder='Perfume ID'/>
+      <input type='submit' value='Find Similar' />
+    </form>
+  </div>
+    {% endif %}
+
+    {% if perfume_id %}
+    <table class="table table-striped" align='center'>
+      <thead>
+        <th align="center">Brand</th>
+        <th align="center">Perfume Name</th>
+        <th align="center">Gender</th>
+        <th align="center">Theme</th>
+        <th align="center">Note</th>
+      </thead>
+      <tbody>
+        {% for element in recs%}
+          <tr>
+            <td>{{ element['brand_en'] }}</td>
+            <td>{{ element['item_name'] }}</td>
+            <td>{{ element['gender_en']}}</td>
+            <td>{{ element['theme_en']}}</td>
+            <td>{{ element['note_en']|join(',')}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+
+
+<div class='space'>
+</div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <a href="/">Home</a>
+          </li>
+          <li class="footer-menu-divider list-inline-item">&sdot;</li>
+          <li class="list-inline-item">
+            <a href="#about">About ScentMate</a>
+          </li>
+          <li class="footer-menu-divider list-inline-item">&sdot;</li>
+          <li class="list-inline-item">
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+        <p class="copyright text-muted small">Copyright &copy; ScentMate 2017. All Rights Reserved</p>
+      </div>
+    </footer>
+
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="static/vendor/jquery/jquery.min.js"></script>
+  <script src="static/vendor/popper/popper.min.js"></script>
+  <script src="static/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+  </body>
+</html>
