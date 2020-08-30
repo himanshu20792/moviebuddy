@@ -1,59 +1,99 @@
-<p align="center"><img width=80% src="https://github.com/himanshu20792/moviebuddy/blob/master/meta_data/logo.bmp"></p>
+# Showing now at screen near you .....
+
+<p align="center"><img width=100% src="https://github.com/himanshu20792/moviebuddy/blob/master/meta_data/Homepage_picture.bmp"></p>
+
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Python](https://img.shields.io/badge/python-v3.7+-blue.svg)
-![Dependencies](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)
-[![GitHub Issues](https://img.shields.io/github/issues/hilsdsg3/movie-recommender.svg)](https://github.com/hilsdsg3/movie-recommender/issues)
-![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
 
 ## MovieBuddy Features
 - THE website for movie recommendations
 - Home of the 1-click-recommendation
 - Wide selection of over +44,000 movies
-- Three different options of recommendations
+- Three different look-up experieces
 - Minimizes the cold start problem
+- Login-free
 
-<p align="center"><img width=100% src="https://github.com/himanshu20792/moviebuddy/blob/master/meta_data/Homepage_picture.bmp"></p>
+<p>
+
+The login-free way to search for movies is here with its ease and simplicity.
+One click and you will have recommended movies through interacting with a fun word cloud.
+The app offers three different experiences to cover all movie clients. 
+
+</p>
+
+- the new user : word cloud
+- the casual user : find similar
+- movie buff : login
 
 <br>
 
-### Details
-The goal of the website is to give a variety of ways to recommend movies. The MovieBuddy website also has three levels of interaction starting from the homepage.
-One of the team goals was to reduce the amount of clicks to get to the recommendations. The MovieBuddy recommends from a vast array of movies, over 44,000 movies with unique keyword and genre preferences.
+### Motivation
+Clients are frustrated with logging into exclusive recommenders. Clients are wary about pre-personalized recommendations. Our app would be an alternative to these recommenders. As mentioned bove the MovieBuddy app has three levels of interaction starting from the homepage. To reduce the amount of clicks to get to the recommendations. The MovieBuddy recommends from a vast array of movies, over 44,000 movies.
+Three client groups are chosen to serve here : spontaneous, casual, and movie buff clients.
 
-The Word Cloud button leads to a word cloud that uses keyword search. On the Word Cloud page one click get you to the first recommendations. Once one word is selected from the word cloud, the recommendations appear. Currently , the team is improving the website for enhanced functionality like regenerating word cloud for other recommendations.
+### General recommendation Systems
+The purpose of recommendation systems is to gather some preference from the client to predict the level of interest a user has in a new item. There are three diffrent and distinct systems in existence today. 
 
-The Movie Preferences button leads to a page where selections of three genres with the ability to select like movies in each genre. This portion of the website would recommend after only three clicks. This page is currently under construction.
+1. Popularity Based recommenders use a similar recommendation to every client, based on the usage and popularity of an item.
+2. Content-Based recommender focus on certain aspects of items. The similarity of items is determined by measuring the similarity in their aspects. There are different types of content-based systems : classification/regression and item content similarity.
+3. Collaborative Filtering recommenders try to pinpoint the relationship between client and items. Similarity of items is determined by the rating similarity of those items by the clients who have rated both items.
+
+Also, the cold start problem is recommendation system does not have any intelligience or preferences about the client. On other login systems, they gather much implicit data from a client. We minimize this cold start challenge with the MovieBuddy App.
+
+### Client groups
+Three client groups are chosen : spontaneous, casual, and movie buff clients.
+<p align="center"><img width=100% src="https://github.com/himanshu20792/moviebuddy/blob/master/meta_data/clients_picture.png"></p>
+
+## MovieBuddy Appilation powered by Flask
+For this app we chose a content-based recommender for the spontaneous and casual client group and a collabrative filtering recommender for the dedicated movie buff.  
+
+The Word Cloud button leads to a word cloud that uses keyword search. This method of searching minimizes the cold start problem. On the Word Cloud page one click get you to the first recommendations. Once one word is selected from the word cloud, the recommendations appear. 
+
+The Movie Preferences button leads to a page where selections of three genres with the ability to select like movies in each genre. This portion of the website would recommend after only three clicks. 
 
 <p align="center"><img width=100% src="https://github.com/himanshu20792/moviebuddy/blob/master/meta_data/Organization_website.bmp"></p>
+
+<p align="center"><img width=100% src="https://github.com/himanshu20792/moviebuddy/blob/master/meta_data/development_overview.png"></p>
+
 <br>
 
-## App Development
+## Backend Development : Python
 
-* This application is built with flask. (Placeholder for additional text)
+- Exploratory Data analysis summary :
+We used a Made with ML movie database containing 46628 movies which the column titles were : 
+'''
+Index(['id', 'title', 'tagline', 'description', 'genres', 'keywords', 'date',
+       'collection', 'runtime', 'revenue', 'budget', 'director', 'cast',
+       'production_companies', 'production_countries', 'popularity',
+       'average_vote', 'num_votes', 'language', 'imdb_id', 'poster_url'],
+      dtype='object')
+'''
+We had to clean the database of duplicate full rows, imdb id, and select title.
+Also, 5.41% / 2524 movies were without a genre and 31.9% / 14889 without an entry in keywords.
+These movies were not considered in the search. In the future , we will incorporate these movies back into the search.
 
-## Recommender Development
-
-- Word cloud generation
-The word cloud generates by frequencies or occurrences of words, then normalizes the occurence values and displays them as with a graphic.
+- Word cloud generation (Spontenous client)
+The word cloud generates by frequencies or occurrences of words per movie.
+First, import CountVectorizor from sklearn , count every word or bag of words per movie, sort, display, and write word cloud graphic.   
 ```
-requencies = sorted(frequencies.items(), key=itemgetter(1), reverse=True)
+Overview of the Python code : (Pseudo-code)
+import CountVectorizer from sklearn
+counts = pd.DataFrame(count_matrix.toarray(),index=df.title,
+                      columns=vectorizer.get_feature_names())
+counts_transposed.sort_values(by=['sum'], axis=0, ascending=False)
 ```
+<p align="center"><img width=100% src="https://github.com/himanshu20792/moviebuddy/blob/master/meta_data/word_cloud_graphic_readme.png"></p>
 
-The word cloud is generated with python and displayed and powered by a flask app.
+To avoid the keywords to be split like 'woman director', the df was created with and underscore like 'woman_director' to maintain the logical connection.
 
 <p align="center"><img width=80% src="https://github.com/himanshu20792/moviebuddy/blob/master/meta_data/Word_cloud_process_flow.bmp"></p>
 
-
-The word cloud graphic is the following :  
-<p align="center"><img width=80% src="https://github.com/himanshu20792/moviebuddy/blob/master/meta_data/word_cloud_graphic.png"></p>
-
 <p align="center"><img width=80% src="https://github.com/himanshu20792/moviebuddy/blob/master/meta_data/findsimilar_process_flow.png"></p>
 
-- Find similar generation
+- Find similar generation (development to be wrtten)
 
-## Live Demo
+- Login generation (development to be wrtten)
 
 ## Disclaimer
 
@@ -67,5 +107,9 @@ Please take a look at the [contributing](https://github.com/himanshu20792/movieb
 - Himanshu Agarwal
 - Ty Schnettler
 
-#### Pending Features
-- Word cloud additional features
+#### Github Links
+![Python](https://img.shields.io/badge/python-v3.7+-blue.svg)
+![Dependencies](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)
+[![GitHub Issues](https://img.shields.io/github/issues/hilsdsg3/movie-recommender.svg)](https://github.com/hilsdsg3/movie-recommender/issues)
+![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
