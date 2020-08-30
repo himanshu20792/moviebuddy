@@ -1,4 +1,4 @@
-# Showing now at screen near you .....
+## Showing now at screen near you .....
 
 <p align="center"><img width=100% src="https://github.com/himanshu20792/moviebuddy/blob/master/meta_data/Homepage_picture.bmp"></p>
 
@@ -45,7 +45,7 @@ Also, the cold start problem is recommendation system does not have any intellig
 Three client groups are chosen : spontaneous, casual, and movie buff clients.
 <p align="center"><img width=100% src="https://github.com/himanshu20792/moviebuddy/blob/master/meta_data/clients_picture.png"></p>
 
-## MovieBuddy Appilation powered by Flask
+### MovieBuddy appilation powered by Flask
 For this app we chose a content-based recommender for the spontaneous and casual client group and a collabrative filtering recommender for the dedicated movie buff.  
 
 The Word Cloud button leads to a word cloud that uses keyword search. This method of searching minimizes the cold start problem. On the Word Cloud page one click get you to the first recommendations. Once one word is selected from the word cloud, the recommendations appear. 
@@ -62,20 +62,26 @@ The Movie Preferences button leads to a page where selections of three genres wi
 
 - Exploratory Data analysis summary :
 We used a Made with ML movie database containing 46628 movies which the column titles were : 
-'''
+
+```
 Index(['id', 'title', 'tagline', 'description', 'genres', 'keywords', 'date',
        'collection', 'runtime', 'revenue', 'budget', 'director', 'cast',
        'production_companies', 'production_countries', 'popularity',
        'average_vote', 'num_votes', 'language', 'imdb_id', 'poster_url'],
       dtype='object')
-'''
+```
+
 We had to clean the database of duplicate full rows, imdb id, and select title.
 Also, 5.41% / 2524 movies were without a genre and 31.9% / 14889 without an entry in keywords.
 These movies were not considered in the search. In the future , we will incorporate these movies back into the search.
 
 - Word cloud generation (Spontenous client)
+<p>
+
 The word cloud generates by frequencies or occurrences of words per movie.
-First, import CountVectorizor from sklearn , count every word or bag of words per movie, sort, display, and write word cloud graphic.   
+First, import CountVectorizor from sklearn , count every word or bag of words per movie, sort, display, and write word cloud graphic.
+</p>
+
 ```
 Overview of the Python code : (Pseudo-code)
 import CountVectorizer from sklearn
@@ -83,9 +89,18 @@ counts = pd.DataFrame(count_matrix.toarray(),index=df.title,
                       columns=vectorizer.get_feature_names())
 counts_transposed.sort_values(by=['sum'], axis=0, ascending=False)
 ```
+<p>
+
+
+</p>
+
 <p align="center"><img width=100% src="https://github.com/himanshu20792/moviebuddy/blob/master/meta_data/word_cloud_graphic_readme.png"></p>
 
+<p>
+
 To avoid the keywords to be split like 'woman director', the df was created with and underscore like 'woman_director' to maintain the logical connection.
+
+</p>
 
 <p align="center"><img width=80% src="https://github.com/himanshu20792/moviebuddy/blob/master/meta_data/Word_cloud_process_flow.bmp"></p>
 
@@ -94,8 +109,6 @@ To avoid the keywords to be split like 'woman director', the df was created with
 - Find similar generation (development to be wrtten)
 
 - Login generation (development to be wrtten)
-
-## Disclaimer
 
 ## Credits
 - Wordcloud package inventor
@@ -107,7 +120,7 @@ Please take a look at the [contributing](https://github.com/himanshu20792/movieb
 - Himanshu Agarwal
 - Ty Schnettler
 
-#### Github Links
+## Github Links
 ![Python](https://img.shields.io/badge/python-v3.7+-blue.svg)
 ![Dependencies](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)
 [![GitHub Issues](https://img.shields.io/github/issues/hilsdsg3/movie-recommender.svg)](https://github.com/hilsdsg3/movie-recommender/issues)
