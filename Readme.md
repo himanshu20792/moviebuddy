@@ -10,7 +10,7 @@
 - THE website for movie recommendations
 - Home of the 1-click-recommendation
 - Wide selection of over +44,000 movies
-- Three different look-up experieces
+- Three different look-up experiences
 - Minimizes the cold start problem
 - Login-free
 
@@ -29,24 +29,24 @@ The app offers three different experiences to cover all movie clients.
 <br>
 
 ### Motivation
-Clients are frustrated with logging into exclusive recommenders. Clients are wary about pre-personalized recommendations. Our app would be an alternative to these recommenders. As mentioned bove the MovieBuddy app has three levels of interaction starting from the homepage. To reduce the amount of clicks to get to the recommendations. The MovieBuddy recommends from a vast array of movies, over 44,000 movies.
+Clients are frustrated with logging into exclusive recommenders. Clients are wary about pre-personalized recommendations. Our app would be an alternative to these recommenders. As mentioned above the MovieBuddy app has three levels of interaction starting from the homepage. To reduce the amount of clicks to get to the recommendations. The MovieBuddy recommends from a vast array of movies, over 44,000 movies.
 Three client groups are chosen to serve here : spontaneous, casual, and movie buff clients.
 
 ### General recommendation Systems
-The purpose of recommendation systems is to gather some preference from the client to predict the level of interest a user has in a new item. There are three diffrent and distinct systems in existence today. 
+The purpose of recommendation systems is to gather some preference from the client to predict the level of interest a user has in a new item. There are three different and distinct systems in existence today. 
 
 1. Popularity Based recommenders use a similar recommendation to every client, based on the usage and popularity of an item.
 2. Content-Based recommender focus on certain aspects of items. The similarity of items is determined by measuring the similarity in their aspects. There are different types of content-based systems : classification/regression and item content similarity.
 3. Collaborative Filtering recommenders try to pinpoint the relationship between client and items. Similarity of items is determined by the rating similarity of those items by the clients who have rated both items.
 
-Also, the cold start problem is recommendation system does not have any intelligience or preferences about the client. On other login systems, they gather much implicit data from a client. We minimize this cold start challenge with the MovieBuddy App.
+Also, the cold start problem is recommendation system does not have any intelligence or preferences about the client. On other login systems, they gather much implicit data from a client. We minimize this cold start challenge with the MovieBuddy App.
 
 ### Client groups
 Three client groups are chosen : spontaneous, casual, and movie buff clients.
 <p align="center"><img width=100% src="https://github.com/himanshu20792/moviebuddy/blob/master/meta_data/clients_picture.png"></p>
 
-### MovieBuddy appilation powered by Flask
-For this app we chose a content-based recommender for the spontaneous and casual client group and a collabrative filtering recommender for the dedicated movie buff.  
+### MovieBuddy application powered by Flask
+For this app we chose a content-based recommender for the spontaneous and casual client group and a collaborative filtering recommender for the dedicated movie buff.  
 
 The Word Cloud button leads to a word cloud that uses keyword search. This method of searching minimizes the cold start problem. On the Word Cloud page one click get you to the first recommendations. Once one word is selected from the word cloud, the recommendations appear. 
 
@@ -75,7 +75,7 @@ We had to clean the database of duplicate full rows, imdb id, and select title.
 Also, 5.41% / 2524 movies were without a genre and 31.9% / 14889 without an entry in keywords.
 These movies were not considered in the search. In the future , we will incorporate these movies back into the search.
 
-- Word cloud generation (Spontenous client)
+- Word cloud generation (Spontaneous client)
 <p>
 
 The word cloud generates by frequencies or occurrences of words per movie.
@@ -98,7 +98,7 @@ counts_transposed.sort_values(by=['sum'], axis=0, ascending=False)
 
 <p>
 
-To avoid the keywords to be split like 'woman director', the df was created with and underscore like 'woman_director' to maintain the logical connection.
+To avoid the keywords to be split like 'woman director', the df was created with and underscore like 'woman director' to maintain the logical connection.
 
 </p>
 
@@ -106,9 +106,9 @@ To avoid the keywords to be split like 'woman director', the df was created with
 
 <p align="center"><img width=80% src="https://github.com/himanshu20792/moviebuddy/blob/master/meta_data/findsimilar_process_flow.png"></p>
 
-- Find similar generation (development to be wrtten)
+- Find similar generation (development to be written)
 
-- Login generation (development to be wrtten)
+- Login generation (development to be written)
 
 ## Credits
 - Wordcloud package inventor
@@ -120,7 +120,7 @@ Please take a look at the [contributing](https://github.com/himanshu20792/movieb
 - Himanshu Agarwal
 - Ty Schnettler
 
-## Github Links
+## GitHub Links
 ![Python](https://img.shields.io/badge/python-v3.7+-blue.svg)
 ![Dependencies](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)
 [![GitHub Issues](https://img.shields.io/github/issues/hilsdsg3/movie-recommender.svg)](https://github.com/hilsdsg3/movie-recommender/issues)
