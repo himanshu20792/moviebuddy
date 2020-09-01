@@ -8,7 +8,7 @@ def home():
 
 @app.route("/findsimilar")
 def findsimilar():
-    return render_template('findsimilar.html')
+    return render_template('findsimilar-two.html')
 
 @app.route("/wordcloud")
 def wordcloud():

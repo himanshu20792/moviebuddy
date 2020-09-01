@@ -1,0 +1,27 @@
+
+html,
+body {
+  /* The image used */
+  background-image: url("img/findsimilar.png");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cover-container {
+  max-width: 42em;
+}
+
+.cover {
+  padding: 0 1.5rem;
+}
+
+.cover .btn-lg {
+  padding: .75rem 1.25rem;
+  font-weight: 700;
+}
