@@ -100,11 +100,19 @@ body {
 .cover {
   padding: 0 1.5rem;
 }
+
+/* Doesnt work!! 
+h1.cover-heading {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 10em;
+  color: red;
+}
+*/
+
 .cover .btn-lg {
   padding: .75rem 1.25rem;
   font-weight: 700;
 }
-
 
 /*
  * Footer
