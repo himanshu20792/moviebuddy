@@ -9,6 +9,7 @@
 ## MovieBuddy Features
 - THE website for movie recommendations
 - Home of the 1-click-recommendation
+- Clean interface - Avoidance of too many recommendations
 - Wide selection of over +44,000 movies
 - Three different look-up experiences
 - Minimizes the cold start problem
