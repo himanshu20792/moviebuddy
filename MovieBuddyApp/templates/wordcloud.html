@@ -7,7 +7,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="static/css/assets/dist/css/bootstrap.min.css" rel="stylesheet"> 
-
+         <!--
       <style>
         .bd-placeholder-img {
           font-size: 1.125rem;
@@ -18,14 +18,36 @@
           user-select: none;
         }
 
+
         @media (min-width: 768px) {
           .bd-placeholder-img-lg {
             font-size: 3.5rem;
           }
         }
       </style>
+        -->
+
+      <style>
+        .loading-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 9999;
+        }
+        .loading-overlay > .inner
+        {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      </style>
+
     <!-- Custom styles for this template -->
     <link href="static/wc.css" rel="stylesheet">
+
   </head>
 
   <body>
@@ -86,9 +108,17 @@
       </form>
     </div>
 
+    <div class="loading-overlay"><div class="inner"><img src="img/word_cloud_graphic.png" title="Loading" class="img-responsive center-block"/></div></div>
+
+
+    <div class="container" style="background-image: url(https://getbootstrap.com/docs/4.5/assets/img/bootstrap-themes.png);">
+    </div>
+
+    <!-- Bootstrap core CSS 
     <div class="container">
       <img class="img-rounded" src="https://getbootstrap.com/docs/4.5/assets/img/bootstrap-themes.png"><br><br>
     </div>
+    -->
     
   </body>
 </html>
