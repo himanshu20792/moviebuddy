@@ -30,8 +30,8 @@ The app offers three different experiences to cover all movie clients.
 <br>
 
 ### Motivation
-Clients are frustrated with logging into exclusive recommenders. Clients are wary about pre-personalized recommendations. Our app would be an alternative to these recommenders. As mentioned above the MovieBuddy app has three levels of interaction starting from the homepage. To reduce the amount of clicks to get to the recommendations. The MovieBuddy recommends from a vast array of movies, over 44,000 movies.
-Three client groups are chosen to serve here : spontaneous, casual, and movie buff clients.
+Customers are frustrated with logging into exclusive recommenders and are wary about pre-personalized recommendations. Our app would be an alternative to these recommenders. As mentioned above the MovieBuddy app has three levels of interaction starting from the homepage. To reduce the amount of clicks to get to the recommendations. The MovieBuddy recommends from a vast array of movies, over 44,000 movies.
+Three market groups are chosen to serve here : spontaneous, casual, and movie buff clients.
 
 ### General recommendation Systems
 The purpose of recommendation systems is to gather some preference from the client to predict the level of interest a user has in a new item. There are three different and distinct systems in existence today. 
@@ -42,8 +42,8 @@ The purpose of recommendation systems is to gather some preference from the clie
 
 Also, the cold start problem is recommendation system does not have any intelligence or preferences about the client. On other login systems, they gather much implicit data from a client. We minimize this cold start challenge with the MovieBuddy App.
 
-### Client groups
-Three client groups are chosen : spontaneous, casual, and movie buff clients.
+### Market groups
+Three market segments will be targeted : spontaneous, casual, and movie buff clients.
 <p align="center"><img width=100% src="https://github.com/himanshu20792/moviebuddy/blob/master/meta_data/clients_picture.png"></p>
 
 ### MovieBuddy application powered by Flask
@@ -55,7 +55,7 @@ The Movie Preferences button leads to a page where selections of three genres wi
 
 <p align="center"><img width=100% src="https://github.com/himanshu20792/moviebuddy/blob/master/meta_data/Organization_website.bmp"></p>
 
-<p align="center"><img width=100% src="https://github.com/himanshu20792/moviebuddy/blob/master/meta_data/development_overview.png"></p>
+<p align="center"><img width=80% src="https://github.com/himanshu20792/moviebuddy/blob/master/meta_data/development_overview.png"></p>
 
 <br>
 
