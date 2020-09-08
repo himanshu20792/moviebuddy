@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap cheatsheet</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Typography-->  
+    <div class=container>
+        <h1 class="page-header">Hello, world! <small>Secondary text</small></h1>
+        <p class="lead">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p><mark> 
+        Asperiores sint molestias nostrum ducimus.</mark> voluptatum quis,
+        aliquam blanditiis consectetur mollitia inventore recusandae
+        delectus eum unde magnam incidunt temporibus rerum ipsam
+        debitis?
+        </p>
+
+
+        <hr>
+
+        <!-- ALIGNMENT & TRANSFORMATION-->
+        <p class="text-left text-lowercase">Left aligned text.</p>
+        <p class="text-center text-uppercase">Center aligned text.</p>
+        <p class="text-right text-capitalize">Right aligned text.</p>
+        <p class="text-justify">Justified text.</p>
+        <p class="text-wrap">No wrap text.</p>
+        
+        <!-- QUICK FLOATS-->
+        <div class="float-right">Div floated to right</div>
+        <div class="pull-left">Div floated to left</div>
+        <!-- CLEAR FLOAT -->
+        <div class="clearfix"></div>
+
+        <hr>
+
+        <!-- BLOCKQUOTE -->
+        <blockquote class="blockquote-reverse">
+            <p>Lorem ipsum dolor sit amet consectetur.</p> 
+            <footer>Quote by <cite title="John Doe">John Doe</cite></footer></footer>
+            </blockquote>
+        
+        <hr>
+
+        <!-- LISTS -->
+        <ul class="list-unstyled">
+            <li>Item One</li>
+            <li>Item Two</li>
+            <li>Item Three</li>
+            <li>Item Four</li>
+        </ul>
+        
+        <ul class="list-inline">
+            <li>Item One</li>
+            <li>Item Two</li>
+            <li>Item Three</li>
+            <li>Item Four</li>
+        </ul>
+
+        <!-- CODE -->
+        <code>&lt;h1&gt;Heading Text&lt;/h1&gt;</code>
+        <br>
+        Change directory with<kbd>cd</kbd>
+        <br>
+        To edit settings, press <kbd><kbd>ctrl</kbd> + </kbd></kbd>
+
+        <!-- CONTEXTUAL COLOR -->
+        <p class="text-primary">Hello World</p>
+        <p class="text-success">Hello World</p>
+        <p class="text-danger">Hello World</p>
+        <p class="text-warning">Hello World</p>
+        <p class="text-muted">Hello World</p>
+        <p class="text-info">Hello World</p>
+        
+         <!-- CONTEXTUAL BACKGROUND COLORS -->
+         <p class="bg-primary">Hello World</p>
+         <p class="bg-success">Hello World</p>
+         <p class="bg-danger">Hello World</p>
+         <p class="bg-warning">Hello World</p>
+         <p class="bg-muted">Hello World</p>
+         <p class="bg-info">Hello World</p>
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="container">
+        <button class="btn btn-default">Default</button>
+        <a href="#" class="btn btn-default" role="button">Link</a>
+        <input type="submit" class="btn btn-default" value="Submit">
+        <br>
+        <!-- CONTEXUAL BUTTONS -->
+        <button class="btn btn-default">Default</button>
+        <button class="btn btn-primaryt">Primary</button>
+        <button class="btn btn-success">Success</button>
+        <button class="btn btn-info">Info</button>
+        <button class="btn btn-warning">Warning</button>
+        <button class="btn btn-default">Delete</button>    
+        <button class="btn btn-link">Link</button>  
+        <br>
+
+        <!-- CONTEXUAL BUTTONS -->
+        <button class="btn btn-default btn-lg">Large</button>
+        <button class="btn btn-default btn">Default</button>
+        <button class="btn btn-primary btn-sm">Small</button>
+        <button class="btn btn-success btn-xs" disabled="disabled">X-small</button>
+    </div>
+    <br>
+
+    <!-- FORMS -->
+    <div class="container">
+        <form>
+            <div class="form-control">
+                <label>Name</label>
+                <input type="text" class="form-control" placeholder="Add Name">
+            </div>
+            <div class="form-control">
+                <label>Email</label>
+                <input type="email" class="form-control" placeholder="Add Email">
+            </div>
+            <div class="form-control">
+                <label>Message</label>
+                <textarea class="form-control" placeholder="Add message"></textarea>
+            </div>
+            <br>
+            <div class="form-group">
+                <label>Gender</label>
+                <select class="form-control">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Upload File</label>
+                <input type="file">
+                <p class="help-block">Only png and jpg allowed</p>
+            </div>
+
+        </form>
+    </container>
+
+    <div class="container">
+        <img class="img-rounded" src="https://getbootstrap.com/docs/4.5/assets/img/bootstrap-themes.png"><br><br>
+    </div>
+
+    <div style="height:400px"></div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
