@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <title>WordCloud</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/cover/">
 
     <!-- Bootstrap core CSS -->
@@ -51,7 +51,8 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="container container-image"> 
+      <img class="image-floating" src="//via.placeholder.com/1600x1600" />
       <br>
       <h2>Select from one of the word clouds</h2>
       <form action="/action_page.php">
@@ -108,7 +109,33 @@
       </form>
     </div>
 
-    <div class="loading-overlay"><div class="inner"><img src="img/word_cloud_graphic.png" title="Loading" class="img-responsive center-block"/></div></div>
+    <div class="loading-overlay">
+      <div class="inner">
+        <img src="img/word_cloud_graphic.png" title="Loading" class="img-fluid center-block" style="width:100%;max-width:100% !important"/>
+      </div>
+    </div>
+
+
+    <div class="container-fluid">
+      <div class="background">
+     <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <h1 class="text-center heading">H.G Wells</h1>
+      <hr>  
+         </div> 
+            </div>
+      <div class="row">
+       <div class="col-xs-12 col-md-6 col-lg-6"> 
+         <div id="word1">
+           <h2 class="text-center">Father of Science friction books</h2>
+           <div class="img-responsive img-rounded">
+           <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Grateful_Dead_-_Jerry_Garcia.jpg" alt="HGWells" class="img-fluid img-rounded" />
+         </div>
+         </div>
+        </div>  
+    </div>
+    </div>
+    </div>
 
 
     <div class="container" style="background-image: url(https://getbootstrap.com/docs/4.5/assets/img/bootstrap-themes.png);">

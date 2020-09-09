@@ -19,6 +19,7 @@ a:hover {
   border: .05rem solid #fff;
 }
 
+
 .loading-overlay {
   position: fixed;
   top: 0;
@@ -33,6 +34,23 @@ a:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+
+body{
+  top-margin:60px;
+}
+.heading{
+  font-size:400%;
+}
+.background{
+  background-color:lightgrey;
+  margin-top:5rem;
+}
+#word1{
+  margin-top:1rem;
+  margin-bottom:1rem;
+  color:black;
 }
 
 /*
@@ -139,4 +157,28 @@ h1.cover-heading {
  */
 .mastfoot {
   color: rgba(255, 255, 255, .5);
+}
+
+/* start update */
+html, body {
+  min-height: 100vh;
+  height: auto !important;
+}
+.container-image {
+  position: relative;
+  max-width: calc(100% - 100px);
+}
+.container-image .image-floating {
+  position: absolute;
+  bottom: 50px;
+  right: 0;
+  width: 50vw;
+  max-width: 600px;
+}
+@media(max-width: 600px) {
+  .container-image .image-floating  {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+  }
 }
