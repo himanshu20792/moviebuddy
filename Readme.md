@@ -19,7 +19,7 @@
 
 The login-free way to search for movies is here with its ease and simplicity.
 One click and you will have recommended movies through interacting with a fun word cloud.
-The app offers three different experiences to cover all movie clients. 
+The app offers three different experiences to cover all movie markets. 
 
 </p>
 
@@ -31,23 +31,23 @@ The app offers three different experiences to cover all movie clients.
 
 ### Motivation
 Customers are frustrated with logging into exclusive recommenders and are wary about pre-personalized recommendations. Our app would be an alternative to these recommenders. As mentioned above the MovieBuddy app has three levels of interaction starting from the homepage. To reduce the amount of clicks to get to the recommendations. The MovieBuddy recommends from a vast array of movies, over 44,000 movies.
-Three market groups are chosen to serve here : spontaneous, casual, and movie buff clients.
+Three market groups are chosen to serve here : spontaneous, casual, and movie buff markets.
 
 ### General recommendation Systems
-The purpose of recommendation systems is to gather some preference from the client to predict the level of interest a user has in a new item. There are three different and distinct systems in existence today. 
+The purpose of recommendation systems is to gather some preference from the market to predict the level of interest a user has in a new item. There are three different and distinct systems in existence today. 
 
-1. Popularity Based recommenders use a similar recommendation to every client, based on the usage and popularity of an item.
+1. Popularity Based recommenders use a similar recommendation to every market, based on the usage and popularity of an item.
 2. Content-Based recommender focus on certain aspects of items. The similarity of items is determined by measuring the similarity in their aspects. There are different types of content-based systems : classification/regression and item content similarity.
-3. Collaborative Filtering recommenders try to pinpoint the relationship between client and items. Similarity of items is determined by the rating similarity of those items by the clients who have rated both items.
+3. Collaborative Filtering recommenders try to pinpoint the relationship between the market and items. Similarity of items is determined by the rating similarity of those items by the users who have rated both items.
 
-Also, the cold start problem is recommendation system does not have any intelligence or preferences about the client. On other login systems, they gather much implicit data from a client. We minimize this cold start challenge with the MovieBuddy App.
+Also, the cold start problem is a recommendation system that does not have any intelligence or preferences about the user. On other login systems, they gather much implicit data from a user often times without their explicit permission. We minimize this cold start challenge with the MovieBuddy App.
 
 ### Market groups
-Three market segments will be targeted : spontaneous, casual, and movie buff clients.
+Three market segments will be targeted : spontaneous, casual, and movie buff markets.
 <p align="center"><img width=100% src="https://github.com/himanshu20792/moviebuddy/blob/master/meta_data/clients_picture.png"></p>
 
 ### MovieBuddy application powered by Flask
-For this app we chose a content-based recommender for the spontaneous and casual client group and a collaborative filtering recommender for the dedicated movie buff.  
+For this app we chose a content-based recommender for the spontaneous and casual market group and a collaborative filtering recommender for the dedicated movie buff.  
 
 The Word Cloud button leads to a word cloud that uses keyword search. This method of searching minimizes the cold start problem. On the Word Cloud page one click get you to the first recommendations. Once one word is selected from the word cloud, the recommendations appear. 
 
@@ -76,7 +76,7 @@ We had to clean the database of duplicate full rows, imdb id, and select title.
 Also, 5.41% / 2524 movies were without a genre and 31.9% / 14889 without an entry in keywords.
 These movies were not considered in the search. In the future , we will incorporate these movies back into the search.
 
-- Word cloud generation (Spontaneous client)
+- Word cloud generation (Spontaneous market)
 <p>
 
 The word cloud generates by frequencies or occurrences of words per movie.
@@ -127,3 +127,4 @@ Please take a look at the [contributing](https://github.com/himanshu20792/movieb
 [![GitHub Issues](https://img.shields.io/github/issues/hilsdsg3/movie-recommender.svg)](https://github.com/hilsdsg3/movie-recommender/issues)
 ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
