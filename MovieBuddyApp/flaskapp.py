@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite://search.db'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///C:/Users/champ/Python_proj/made_with_ml_repo/temp/moviebuddy/MovieBuddyApp/search.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///https://github.com/himanshu20792/moviebuddy/blob/master/MovieBuddyApp/search.db'
 # Initialize the database
 db = SQLAlchemy(app)
 
