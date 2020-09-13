@@ -7,44 +7,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="static/css/assets/dist/css/bootstrap.min.css" rel="stylesheet"> 
-         <!--
-      <style>
-        .bd-placeholder-img {
-          font-size: 1.125rem;
-          text-anchor: middle;
-          -webkit-user-select: none;
-          -moz-user-select: none;
-          -ms-user-select: none;
-          user-select: none;
-        }
-
-
-        @media (min-width: 768px) {
-          .bd-placeholder-img-lg {
-            font-size: 3.5rem;
-          }
-        }
-      </style>
-        -->
-
-      <style>
-        .loading-overlay {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          z-index: 9999;
-        }
-        .loading-overlay > .inner
-        {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-        }
-      </style>
-
+      
     <!-- Custom styles for this template -->
     <link href="static/wc.css" rel="stylesheet">
 
@@ -52,7 +15,9 @@
 
   <body>
     <div class="container container-image"> 
-      <img class="image-floating" src="//via.placeholder.com/1600x1600" />
+      
+      <img class="image-floating" src="https://github.com/hilsdsg3/MovieBuddy/blob/master/meta_data/word_cloud_graphic.png" />
+      <!--<img class="image-floating" src="//via.placeholder.com/1600x1600" />-->
       <br>
       <h2>Select from one of the word clouds</h2>
       <form action="/action_page.php">
@@ -109,43 +74,8 @@
       </form>
     </div>
 
-    <div class="loading-overlay">
-      <div class="inner">
-        <img src="img/word_cloud_graphic.png" title="Loading" class="img-fluid center-block" style="width:100%;max-width:100% !important"/>
-      </div>
-    </div>
-
-
-    <div class="container-fluid">
-      <div class="background">
-     <div class="row">
-      <div class="col-xs-12 col-md-12">
-        <h1 class="text-center heading">H.G Wells</h1>
-      <hr>  
-         </div> 
-            </div>
-      <div class="row">
-       <div class="col-xs-12 col-md-6 col-lg-6"> 
-         <div id="word1">
-           <h2 class="text-center">Father of Science friction books</h2>
-           <div class="img-responsive img-rounded">
-           <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Grateful_Dead_-_Jerry_Garcia.jpg" alt="HGWells" class="img-fluid img-rounded" />
-         </div>
-         </div>
-        </div>  
-    </div>
-    </div>
-    </div>
-
-
     <div class="container" style="background-image: url(https://getbootstrap.com/docs/4.5/assets/img/bootstrap-themes.png);">
     </div>
-
-    <!-- Bootstrap core CSS 
-    <div class="container">
-      <img class="img-rounded" src="https://getbootstrap.com/docs/4.5/assets/img/bootstrap-themes.png"><br><br>
-    </div>
-    -->
     
   </body>
 </html>
