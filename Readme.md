@@ -30,7 +30,7 @@ The app offers three different experiences to cover all movie markets.
 <br>
 
 ### General Motivation
-Customers are frustrated with logging into exclusive recommenders and are wary about pre-personalized recommendations. Additionally there are too many  recommendations. The MovieBuddy offers a seamless experience tailored to the customer in a way that is unobtrusive. MovieBuddy has three tailored levels of interaction. Being login-free, MovieBuddy is easy to use because of its minimal interaction and solves the cold start problem. The MovieBuddy recommends from a vast array of movies, over 44,000 movies and would easily accomodate new movies into the recommender.
+Customers are frustrated with logging into exclusive recommenders and are wary about pre-personalized recommendations. Additionally there are too many  recommendations. The MovieBuddy offers a seamless experience tailored to the customer in a way that is unobtrusive. MovieBuddy has three tailored levels of interaction. Being login-free, MovieBuddy is easy to use because of its minimal interaction and solves the cold start problem. The MovieBuddy recommends from a vast array of movies, over 44,000 movies and would easily accommodate new movies into the recommender.
 
 ### Technical Motivation
 Most movie recommender systems are based on purely a collaborative filtering (CF) and content based filtering system (CBF). However, these systems typically don't address the cold start (CS) problem very well. MovieBuddy solves the coldstart issue plaguing many recommender systems on the market. By utilizing the minimal login-free interaction from the user, this solves the cold start problem. In particular by selecting a word cloud keyword OR the find similar genres/movies. By gathering these human-generated preferences in a non-intrusive yet structured manner, it eliminates the noisy data collection, non-expensive to collect, and the human-generated information is required for the recommendations.
@@ -42,7 +42,7 @@ The purpose of recommendation systems is to gather some preference from the mark
 2. Content-Based recommender focus on certain aspects of items. The similarity of items is determined by measuring the similarity in their aspects. There are different types of content-based systems : classification/regression and item content similarity.
 3. Collaborative Filtering recommenders try to pinpoint the relationship between the market and items. Similarity of items is determined by the rating similarity of those items by the users who have rated both items.
 
-The cold start problem is not addressed fully with the common recomendation system. We minimize this cold start challenge with the MovieBuddy App.
+The cold start problem is not addressed fully with the common recommendation system. We minimize this cold start challenge with the MovieBuddy App.
 
 ### Market groups
 Three market segments will be targeted : spontaneous, casual, and movie buff markets.
@@ -64,7 +64,7 @@ The Movie Preferences button leads to a page where selections of three genres wi
 ## Backend Development : Python
 
 - Exploratory Data analysis summary :
-The movie database used was from kaggle which contained 46628 movies of  which the column titles were : 
+The movie database used was from Kaggle which contained 46628 movies of  which the column titles were : 
 ```
 Index(['id', 'title', 'tagline', 'description', 'genres', 'keywords', 'date',
        'collection', 'runtime', 'revenue', 'budget', 'director', 'cast',
@@ -76,7 +76,7 @@ Index(['id', 'title', 'tagline', 'description', 'genres', 'keywords', 'date',
 The EDA analysis cleaned the database of duplicate full rows, imdb id, and titles. 5.41% / 2524 movies were without a genre and 31.9% / 14889 without an entry in keywords. These movies were not considered in the search. In the future , they will need to be incorporated into the recommendation system.
 
 The word cloud and the find similar use NLP tools from the python package sklearn. 
-Word cloud : countvectorizer 
+Word cloud : CountVectorizer 
 Find similar : cosine_similarity
 
 - Word cloud generation (Spontaneous market)
@@ -113,7 +113,7 @@ To avoid the keywords to be split like 'woman director', the df was created with
 
 <p>
 
-The code with find similar searches for similar titles to the movies chosen by the user and assigns a cosine similarity score. The the resulting 20 movies are recommended.
+The code with find similar searches for similar titles to the movies chosen by the user and assigns a cosine similarity score. The resulting 20 movies are recommended.
 
 </p>
 
@@ -148,4 +148,5 @@ Please take a look at the [contributing](https://github.com/himanshu20792/movieb
 [![GitHub Issues](https://img.shields.io/github/issues/hilsdsg3/movie-recommender.svg)](https://github.com/hilsdsg3/movie-recommender/issues)
 ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
 
